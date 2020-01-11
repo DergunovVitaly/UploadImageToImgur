@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  HomeNotes
+//  
 //
 //  Created by Vitalii Derhunov on 8/8/19.
 //

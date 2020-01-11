@@ -1,6 +1,6 @@
 //
 //  VendorService.swift
-//  HomeNotes
+//  
 //
 //  Created by Vitalii Derhunov on 21.08.2019.
 //  
