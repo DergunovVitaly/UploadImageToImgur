@@ -104,13 +104,13 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
-    /// Image `onboarding`.
-    static let onboarding = Rswift.ImageResource(bundle: R.hostingBundle, name: "onboarding")
+    /// Image `logo`.
+    static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "onboarding", bundle: ..., traitCollection: ...)`
-    static func onboarding(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.onboarding, compatibleWith: traitCollection)
+    /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
+    static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
     }
     #endif
 
@@ -119,7 +119,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
     struct localizable {
       /// Value: Cancel
       static let commonCancel = Rswift.StringResource(key: "common.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -129,6 +129,8 @@ struct R: Rswift.Validatable {
       static let commonOk = Rswift.StringResource(key: "common.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Photo Library
       static let photoLibrary = Rswift.StringResource(key: "photoLibrary", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: You got no photo
+      static let noPhoto = Rswift.StringResource(key: "noPhoto", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: link
       static let link = Rswift.StringResource(key: "link", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: ok
@@ -184,6 +186,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("photoLibrary", bundle: bundle, comment: "")
+      }
+
+      /// Value: You got no photo
+      static func noPhoto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("noPhoto", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "noPhoto"
+        }
+
+        return NSLocalizedString("noPhoto", bundle: bundle, comment: "")
       }
 
       /// Value: link

@@ -22,7 +22,7 @@ final class AppRouter {
         
         switch state {
         case.main:
-            window?.rootViewController = UINavigationController(rootViewController: StartVC())
+            window?.rootViewController = UINavigationController(rootViewController: PhotoGridViewController())
         case .debug:
             window?.rootViewController = UINavigationController(rootViewController: DebugVC())
         }

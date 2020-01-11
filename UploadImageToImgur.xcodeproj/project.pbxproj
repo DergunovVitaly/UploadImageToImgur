@@ -10,10 +10,11 @@
 		1F87596223C9E29600599943 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596123C9E29600599943 /* Constants.swift */; };
 		1F87596423C9E87100599943 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596323C9E87100599943 /* AppRouter.swift */; };
 		1F87596623C9E89E00599943 /* DebugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596523C9E89D00599943 /* DebugVC.swift */; };
-		1F87596C23C9F6EE00599943 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596B23C9F6EE00599943 /* PhotoLibraryViewController.swift */; };
-		1F87596E23C9F70700599943 /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596D23C9F70700599943 /* PhotoLibraryView.swift */; };
-		1F87597023C9F71B00599943 /* PhotoLibrariViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596F23C9F71B00599943 /* PhotoLibrariViewModel.swift */; };
+		1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */; };
+		1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596D23C9F70700599943 /* PhotoGridView.swift */; };
+		1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */; };
 		1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759A923C9FD0900599943 /* R.generated.swift */; };
+		1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */; };
 		3FE9F671A4A651EDEABFA9CF /* Pods_UploadImageToImgurTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371985A5ED02858412F24C4 /* Pods_UploadImageToImgurTests.framework */; };
 		4D3F387D21391749DEAB5897 /* Pods_UploadImageToImgur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9939A6FC4E23DC63FD4B98A /* Pods_UploadImageToImgur.framework */; };
 		5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */; };
@@ -27,8 +28,6 @@
 		5B4D66A423685E050080195C /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D668923685E050080195C /* VendorService.swift */; };
 		5B4D66A523685E050080195C /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668B23685E050080195C /* Configuration.plist */; };
 		5B4D66A823685E050080195C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D668F23685E050080195C /* AppDelegate.swift */; };
-		5B4D66A923685E050080195C /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D669323685E050080195C /* StartVC.swift */; };
-		5B4D66AA23685E050080195C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D669423685E050080195C /* StartView.swift */; };
 		C90395261FC62399006F1DC0 /* TestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */; };
 		C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -48,10 +47,11 @@
 		1F87596123C9E29600599943 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F87596323C9E87100599943 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		1F87596523C9E89D00599943 /* DebugVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugVC.swift; sourceTree = "<group>"; };
-		1F87596B23C9F6EE00599943 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
-		1F87596D23C9F70700599943 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
-		1F87596F23C9F71B00599943 /* PhotoLibrariViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrariViewModel.swift; sourceTree = "<group>"; };
+		1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		1F87596D23C9F70700599943 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		1F8759A923C9FD0900599943 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
 		242B2B3C418D963250C65FC0 /* Pods-UploadImageToImgurTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgurTests.release.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgurTests/Pods-UploadImageToImgurTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A1E77331F384BFC006C84D4 /* UploadImageToImgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadImageToImgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1E77471F384BFD006C84D4 /* UploadImageToImgurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadImageToImgurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +72,6 @@
 		5B4D668B23685E050080195C /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		5B4D668C23685E050080195C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4D668F23685E050080195C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B4D669323685E050080195C /* StartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
-		5B4D669423685E050080195C /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		6371985A5ED02858412F24C4 /* Pods_UploadImageToImgurTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UploadImageToImgurTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A0D24B68792529D2AE128D /* Pods-UploadImageToImgurTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgurTests.debug.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgurTests/Pods-UploadImageToImgurTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAppDelegate.swift; sourceTree = "<group>"; };
@@ -142,9 +140,10 @@
 		1F87596A23C9F69E00599943 /* PhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				1F87596B23C9F6EE00599943 /* PhotoLibraryViewController.swift */,
-				1F87596D23C9F70700599943 /* PhotoLibraryView.swift */,
-				1F87596F23C9F71B00599943 /* PhotoLibrariViewModel.swift */,
+				1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */,
+				1F87596D23C9F70700599943 /* PhotoGridView.swift */,
+				1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */,
+				1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */,
 			);
 			path = PhotoLibrary;
 			sourceTree = "<group>";
@@ -311,18 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				1F87596723C9EA2300599943 /* Debug */,
-				5B4D669223685E050080195C /* StartVC */,
 			);
 			path = Entrance;
-			sourceTree = "<group>";
-		};
-		5B4D669223685E050080195C /* StartVC */ = {
-			isa = PBXGroup;
-			children = (
-				5B4D669323685E050080195C /* StartVC.swift */,
-				5B4D669423685E050080195C /* StartView.swift */,
-			);
-			path = StartVC;
 			sourceTree = "<group>";
 		};
 		5B7E306F2368749E00166008 /* BundleFiles */ = {
@@ -389,7 +378,7 @@
 				TargetAttributes = {
 					2A1E77321F384BFC006C84D4 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					2A1E77461F384BFD006C84D4 = {
 						CreatedOnToolsVersion = 9.0;
@@ -556,22 +545,21 @@
 			files = (
 				5B4D66A823685E050080195C /* AppDelegate.swift in Sources */,
 				5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */,
-				1F87596C23C9F6EE00599943 /* PhotoLibraryViewController.swift in Sources */,
+				1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */,
 				5B4D669D23685E050080195C /* Bundle+Ext.swift in Sources */,
-				1F87596E23C9F70700599943 /* PhotoLibraryView.swift in Sources */,
+				1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
 				1F87596423C9E87100599943 /* AppRouter.swift in Sources */,
 				5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */,
 				1F87596223C9E29600599943 /* Constants.swift in Sources */,
 				5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */,
-				5B4D66A923685E050080195C /* StartVC.swift in Sources */,
 				1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */,
 				1F87596623C9E89E00599943 /* DebugVC.swift in Sources */,
+				1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */,
 				5B4D66A423685E050080195C /* VendorService.swift in Sources */,
 				5B4D669C23685E050080195C /* Date+Ext.swift in Sources */,
-				1F87597023C9F71B00599943 /* PhotoLibrariViewModel.swift in Sources */,
+				1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */,
 				5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */,
-				5B4D66AA23685E050080195C /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,13 +702,14 @@
 			baseConfigurationReference = FFD4094B2F56E5F6D30ADA93 /* Pods-UploadImageToImgur.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgur/Application/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xfrontend -warn-long-expression-type-checking=500";
-				PRODUCT_BUNDLE_IDENTIFIER = mobi.anoda.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = vitalii.d.bundle.id;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -733,13 +722,14 @@
 			baseConfigurationReference = 4DAC36C6812A36F8172D4F91 /* Pods-UploadImageToImgur.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgur/Application/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = mobi.anoda.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = vitalii.d.bundle.id;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -850,13 +840,14 @@
 			baseConfigurationReference = 42B2ED24F7FA3C9895C863AB /* Pods-UploadImageToImgur.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgur/Application/BundleFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = mobi.anoda.bundle.id;
+				PRODUCT_BUNDLE_IDENTIFIER = vitalii.d.bundle.id;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 extension UIViewController {
     var isModal: Bool {
@@ -19,13 +20,34 @@ extension UIViewController {
         }
         return false
     }
-
+    
     func close(animated: Bool = true) {
         guard isModal else {
             navigationController?.popViewController(animated: animated)
             return
         }
         dismiss(animated: animated)
+    }
+    
+     func showAlert(alertText: String, alertMessage: String, buttonTitle: String) {
+        let alert = UIAlertController(title: alertText,
+                                      message: alertMessage,
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showProgress() {
+        DispatchQueue.main.async {
+            MBProgressHUD.showProgress(on: self)
+        }
+    }
+    
+    func hideProgress() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hideProgress(for: self)
+        }
     }
 }
 
