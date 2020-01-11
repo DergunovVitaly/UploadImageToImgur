@@ -64,8 +64,14 @@ class PhotoGridViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = 5
         flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         if UIApplication.shared.statusBarOrientation.isLandscape {
-            let size = (view.frame.width / 5) - flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
-            flowLayout.itemSize = CGSize(width: size, height: size)
+            if #available(iOS 11.0, *) {
+                let size = (view.safeAreaLayoutGuide.layoutFrame.width / 5) -
+                    flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
+                    flowLayout.itemSize = CGSize(width: size, height: size)
+            } else {
+                let size = (view.frame.width / 5) - flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
+                flowLayout.itemSize = CGSize(width: size, height: size)
+            }
         } else {
             let size = (UIScreen.width / 3) - flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
             flowLayout.itemSize = CGSize(width: size, height: size)
