@@ -5,7 +5,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'UploadImageToImgur' do
-
+  
   pod 'SnapKit'
   pod 'R.swift'
   pod 'MBProgressHUD'
@@ -13,7 +13,8 @@ target 'UploadImageToImgur' do
   pod 'Moya/RxSwift'
   pod 'SwiftLint'
   pod 'Eureka'
-
+  pod 'ReachabilitySwift'
+  
   target 'UploadImageToImgurTests' do
     inherit! :search_paths
   end

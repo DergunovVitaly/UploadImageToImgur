@@ -12,7 +12,7 @@ import Photos
 
 class PhotoGridViewModel {
     
-    func grabPhotos() -> [UIImage] {
+    func grabPhotos(completion: @escaping  (Result<[UIImage], Error>) -> Void) {
         var imageArray = [UIImage]()
         let imgManager = PHImageManager.default()
         
@@ -24,8 +24,7 @@ class PhotoGridViewModel {
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        
-        //TODO: Show progress indicator
+    
         if fetchResult.count > 0 {
             for item in 0..<fetchResult.count {
                 imgManager.requestImage(for: fetchResult.object(at: item),
@@ -38,11 +37,10 @@ class PhotoGridViewModel {
                                             debugPrint(error ?? "")
                 }
             }
+            completion(.success(imageArray))
         } else {
-            
             //TODO: Show photos when allow to use photoLibrary
             debugPrint(Localizable.noPhoto())
         }
-        return imageArray
     }
 }

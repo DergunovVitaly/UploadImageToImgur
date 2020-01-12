@@ -12,7 +12,11 @@ import UIKit
 class PhotoGridViewController: UIViewController {
     
     private let contentView = PhotoGridView()
-    private let imageArray = PhotoGridViewModel().grabPhotos()
+    private let viewModel = PhotoGridViewModel()
+    private var imageArray: [UIImage] = []
+    private var itemsPerRow: CGFloat = 3
+    private let minimumItemSpacing: CGFloat = 5
+    let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -29,6 +33,14 @@ class PhotoGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.grabPhotos { [unowned self] result in
+            switch result {
+            case .success(let image):
+                self.imageArray = image
+            case .failure:
+                self.showAlert(alertText: "Error", alertMessage: "Error", buttonTitle: "Ok")
+            }
+        }
         contentView.collectionView.delegate = self
         contentView.collectionView.dataSource = self
     }
@@ -56,33 +68,12 @@ class PhotoGridViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        guard let flowLayout = contentView.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            return
-        }
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 5
-        flowLayout.minimumInteritemSpacing = 5
-        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        if UIApplication.shared.statusBarOrientation.isLandscape {
-            if #available(iOS 11.0, *) {
-                let size = (view.safeAreaLayoutGuide.layoutFrame.width / 5) -
-                    flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
-                    flowLayout.itemSize = CGSize(width: size, height: size)
-            } else {
-                let size = (view.frame.width / 5) - flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
-                flowLayout.itemSize = CGSize(width: size, height: size)
-            }
-        } else {
-            let size = (UIScreen.width / 3) - flowLayout.minimumLineSpacing - flowLayout.sectionInset.left
-            flowLayout.itemSize = CGSize(width: size, height: size)
-        }
-        flowLayout.invalidateLayout()
-        contentView.collectionView.reloadData()
+        itemsPerRow = UIApplication.shared.statusBarOrientation.isLandscape ? 5 : 3
     }
 }
 
 extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
@@ -94,5 +85,36 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
             for: indexPath) as? PhotoGridCell else { return UICollectionViewCell() }
         cell.thumbnailImage = imageArray[indexPath.row]
         return cell
+    }
+    
+}
+
+extension PhotoGridViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = sectionInsets.left + sectionInsets.right + minimumItemSpacing * (itemsPerRow - 1)
+        let availableWidth = collectionView.bounds.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumItemSpacing
     }
 }

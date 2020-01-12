@@ -11,6 +11,6 @@ import UIKit
 class VendorService: NSObject {
     
     static func start(options: [UIApplication.LaunchOptionsKey: Any]?) {
-        
+        NetworkReachabilityManager.shared.beginReachability()
     }
 }

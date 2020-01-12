@@ -39,8 +39,6 @@ extension MBProgressHUD {
         }
     }
     
-    // MARK: - Private methods
-    
     static func increaseActivity(view: UIView) {
         setActivity(value: getCurrentActivity(view: view) + 1, view: view)
     }
