@@ -1,5 +1,5 @@
 //
-//  Request.swift
+//  ImageUploadService.swift
 //  UploadImageToImgur
 //
 //  Created by  Vitaly Dergunov on 13.01.2020.
@@ -9,15 +9,12 @@
 import Foundation
 import Moya
 
-class Request {
+class ImageUploadService {
     
-    static func uploadImage(image: UIImage, completion: @escaping(Result<URL, Error>) -> Void) {
+    static func uploadImageModel(image: ImageModel, completion: @escaping(Result<URL, Error>) -> Void) {
         let provider = MoyaProvider<Imgur>()
         var uploadResult: UploadResult?
-        provider.request(.upload(image), callbackQueue: DispatchQueue.main,
-                         //                         progress: {[weak self] progress in
-            //                            self?.progressView.setProgress(Float(progress.progress), animated: true)
-            //            },
+        provider.request(.upload(image.image), callbackQueue: DispatchQueue.main,
             completion: { response in
                 switch response {
                 case .success(let result):

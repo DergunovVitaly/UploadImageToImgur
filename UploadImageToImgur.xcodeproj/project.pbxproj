@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F27FDF323CB74D400E26E0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF223CB74D400E26E0E /* NetworkManager.swift */; };
 		1F27FDF723CB7AD100E26E0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF623CB7AD100E26E0E /* NetworkService.swift */; };
-		1F27FDF923CC93D000E26E0E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF823CC93D000E26E0E /* Request.swift */; };
+		1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */; };
 		1F27FDFB23CC95ED00E26E0E /* UploadResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */; };
 		1F87596223C9E29600599943 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596123C9E29600599943 /* Constants.swift */; };
 		1F87596423C9E87100599943 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596323C9E87100599943 /* AppRouter.swift */; };
@@ -19,14 +19,13 @@
 		1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */; };
 		1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759A923C9FD0900599943 /* R.generated.swift */; };
 		1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */; };
+		1F959F8623CCE8AB00E36337 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8523CCE8AB00E36337 /* ImageModel.swift */; };
 		3FE9F671A4A651EDEABFA9CF /* Pods_UploadImageToImgurTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371985A5ED02858412F24C4 /* Pods_UploadImageToImgurTests.framework */; };
 		4D3F387D21391749DEAB5897 /* Pods_UploadImageToImgur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9939A6FC4E23DC63FD4B98A /* Pods_UploadImageToImgur.framework */; };
 		5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */; };
 		5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667823685E040080195C /* UIScreen+Ext.swift */; };
 		5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667923685E040080195C /* UIViewController+Ext.swift */; };
 		5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */; };
-		5B4D669C23685E050080195C /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667C23685E040080195C /* Date+Ext.swift */; };
-		5B4D669D23685E050080195C /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667D23685E040080195C /* Bundle+Ext.swift */; };
 		5B4D66A123685E050080195C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668423685E040080195C /* Assets.xcassets */; };
 		5B4D66A323685E050080195C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668723685E040080195C /* Localizable.strings */; };
 		5B4D66A423685E050080195C /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D668923685E050080195C /* VendorService.swift */; };
@@ -50,7 +49,7 @@
 		0EEB108112B3468E03B67C63 /* Pods-UploadImageToImgurTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgurTests.adhoc.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgurTests/Pods-UploadImageToImgurTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		1F27FDF223CB74D400E26E0E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1F27FDF623CB7AD100E26E0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		1F27FDF823CC93D000E26E0E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadService.swift; sourceTree = "<group>"; };
 		1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadResults.swift; path = UploadImageToImgur/Services/Networking/UploadResults.swift; sourceTree = SOURCE_ROOT; };
 		1F87596123C9E29600599943 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F87596323C9E87100599943 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		1F8759A923C9FD0900599943 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
+		1F959F8523CCE8AB00E36337 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageModel.swift; path = UploadImageToImgur/Services/Networking/ImageModel.swift; sourceTree = SOURCE_ROOT; };
 		242B2B3C418D963250C65FC0 /* Pods-UploadImageToImgurTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgurTests.release.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgurTests/Pods-UploadImageToImgurTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A1E77331F384BFC006C84D4 /* UploadImageToImgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadImageToImgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1E77471F384BFD006C84D4 /* UploadImageToImgurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadImageToImgurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +72,6 @@
 		5B4D667823685E040080195C /* UIScreen+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667923685E040080195C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
-		5B4D667C23685E040080195C /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		5B4D667D23685E040080195C /* Bundle+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		5B4D668423685E040080195C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4D668723685E040080195C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5B4D668923685E050080195C /* VendorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorService.swift; sourceTree = "<group>"; };
@@ -133,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1F27FDF223CB74D400E26E0E /* NetworkManager.swift */,
-				1F27FDF823CC93D000E26E0E /* Request.swift */,
+				1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */,
 				1F27FDF623CB7AD100E26E0E /* NetworkService.swift */,
 			);
 			path = Networking;
@@ -190,7 +188,6 @@
 		2A1E77351F384BFC006C84D4 /* UploadImageToImgur */ = {
 			isa = PBXGroup;
 			children = (
-				5B281BE1236860E100D74E1D /* Library */,
 				5B4D669023685E050080195C /* UserStory */,
 				5B4D667423685E040080195C /* Extensions */,
 				5B4D667E23685E040080195C /* Resources */,
@@ -211,25 +208,11 @@
 			path = UploadImageToImgurTests;
 			sourceTree = "<group>";
 		};
-		5B281BE1236860E100D74E1D /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				5B281BE2236860E100D74E1D /* Reusable */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		5B281BE2236860E100D74E1D /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reusable;
-			sourceTree = "<group>";
-		};
 		5B281BE42368614D00D74E1D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */,
+				1F959F8523CCE8AB00E36337 /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				5B4D667523685E040080195C /* UI */,
-				5B4D667B23685E040080195C /* Logic */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,15 +234,6 @@
 				5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		5B4D667B23685E040080195C /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				5B4D667C23685E040080195C /* Date+Ext.swift */,
-				5B4D667D23685E040080195C /* Bundle+Ext.swift */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		5B4D667E23685E040080195C /* Resources */ = {
@@ -403,7 +376,7 @@
 					2A1E77461F384BFD006C84D4 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 2A1E77321F384BFC006C84D4;
 					};
 				};
@@ -480,7 +453,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				"$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift",
+				$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -570,20 +543,19 @@
 				5B4D66A823685E050080195C /* AppDelegate.swift in Sources */,
 				5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */,
 				1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */,
-				5B4D669D23685E050080195C /* Bundle+Ext.swift in Sources */,
 				1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
 				1F87596423C9E87100599943 /* AppRouter.swift in Sources */,
 				5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */,
 				1F87596223C9E29600599943 /* Constants.swift in Sources */,
+				1F959F8623CCE8AB00E36337 /* ImageModel.swift in Sources */,
 				5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */,
 				1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */,
 				1F87596623C9E89E00599943 /* DebugVC.swift in Sources */,
 				1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */,
 				5B4D66A423685E050080195C /* VendorService.swift in Sources */,
 				1F27FDF723CB7AD100E26E0E /* NetworkService.swift in Sources */,
-				5B4D669C23685E050080195C /* Date+Ext.swift in Sources */,
-				1F27FDF923CC93D000E26E0E /* Request.swift in Sources */,
+				1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */,
 				1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */,
 				5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */,
 			);
@@ -770,10 +742,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgurTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UploadImageToImgurTests/UploadImageToImgurTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -789,10 +767,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgurTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UploadImageToImgurTests/UploadImageToImgurTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -888,10 +872,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8S4E7K53C;
 				INFOPLIST_FILE = UploadImageToImgurTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UploadImageToImgurTests/UploadImageToImgurTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;

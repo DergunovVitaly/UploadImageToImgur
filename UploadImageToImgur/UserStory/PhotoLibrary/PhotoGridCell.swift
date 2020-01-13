@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 class PhotoGridCell: UICollectionViewCell {
-    
+
     private let imageView = UIImageView()
     
     var thumbnailImage: UIImage! {
@@ -31,6 +32,10 @@ class PhotoGridCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+    }
+    
+    func loadingState(isLoading: Bool) {
+        isLoading ? MBProgressHUD.showProgress(on: self) : MBProgressHUD.hideProgress(for: self)        
     }
     
     private func setupLayout() {

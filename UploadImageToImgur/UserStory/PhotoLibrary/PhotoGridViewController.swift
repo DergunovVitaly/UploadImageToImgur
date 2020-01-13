@@ -12,12 +12,19 @@ import Moya
 
 class PhotoGridViewController: UIViewController {
     
-    private var imageArray: [UIImage] = []
-    private var itemsPerRow: CGFloat = 3
-    private let viewModel = PhotoGridViewModel()
-    private let contentView = PhotoGridView()
+    private var imageModelArray: [ImageModel] = []
     private let minimumItemSpacing: CGFloat = 5
     private let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+    private let viewModel = PhotoGridViewModel()
+    private let contentView = PhotoGridView()
+    
+    var imageIdSet = Set<String>()
+    
+    var isLoading = false
+  
+    private var itemsPerRow: CGFloat {
+        return UIApplication.shared.statusBarOrientation.isLandscape ? 5.0 : 3.0
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -43,7 +50,10 @@ class PhotoGridViewController: UIViewController {
         viewModel.grabPhotos { [unowned self] result in
             switch result {
             case .success(let image):
-                self.imageArray = image
+                self.imageModelArray = image
+                for item in image {
+                    self.imageIdSet.insert(item.id)
+                }
             case .failure:
                 self.presentErrorAlert()
             }
@@ -71,11 +81,6 @@ class PhotoGridViewController: UIViewController {
         debugPrint("taping link button")
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        itemsPerRow = UIApplication.shared.statusBarOrientation.isLandscape ? 5 : 3
-    }
-    
     private func presentShare(image: UIImage, url: URL) {
         let alert = UIAlertController(title: "Your card is ready!", message: nil, preferredStyle: .actionSheet)
         
@@ -96,12 +101,20 @@ class PhotoGridViewController: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    private func checkContainsId(id: String) -> Bool {
+        if imageIdSet.contains(id) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return imageModelArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -109,18 +122,28 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: String(describing: PhotoGridCell.self),
             for: indexPath) as? PhotoGridCell else { return UICollectionViewCell() }
-        cell.thumbnailImage = imageArray[indexPath.row]
+        cell.thumbnailImage = imageModelArray[indexPath.row].image
+        cell.loadingState(isLoading: isLoading)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Request.uploadImage(image: imageArray[indexPath.row]) {[unowned self] (result) in
+        isLoading = self.checkContainsId(id: self.imageModelArray[indexPath.row].id)
+        contentView.collectionView.reloadItems(at: [indexPath])
+        if self.checkContainsId(id: self.imageModelArray[indexPath.row].id) {
+        ImageUploadService.uploadImageModel(image: imageModelArray[indexPath.row]) { [unowned self] (result) in
             switch result {
             case .success(let url):
-                self.presentShare(image: self.imageArray[indexPath.row], url: url)
-            case .failure(let error):
-                print(error)
+                self.imageIdSet.remove(self.imageModelArray[indexPath.row].id)
+                self.isLoading = self.checkContainsId(id: self.imageModelArray[indexPath.row].id)
+                self.contentView.collectionView.reloadItems(at: [indexPath])
+//                self.presentShare(image: self.imageModelArray[indexPath.row].image, url: url)
+            case .failure:
+                self.presentErrorAlert()
             }
+        }
+        } else {
+            self.presentAlert(alertText: "Alert", alertMessage: "This image has been uploaded.", buttonTitle: "Ok")
         }
     }
 }

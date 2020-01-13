@@ -1,5 +1,5 @@
 //
-//  UploadResults.swift
+//  ImageModel.swift
 //  UploadImageToImgur
 //
 //  Created by  Vitaly Dergunov on 13.01.2020.
@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct UploadResult: Codable {
-  let link: URL
+struct ImageModel {
+    let image: UIImage
+    let id: String
 }

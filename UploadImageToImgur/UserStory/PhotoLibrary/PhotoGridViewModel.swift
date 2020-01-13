@@ -12,8 +12,8 @@ import Photos
 
 class PhotoGridViewModel {
     
-    func grabPhotos(completion: @escaping  (Result<[UIImage], Error>) -> Void) {
-        var imageArray = [UIImage]()
+    func grabPhotos(completion: @escaping  (Result<[ImageModel], Error>) -> Void) {
+        var imageArray = [ImageModel]()
         let imgManager = PHImageManager.default()
         
         let requestOptions = PHImageRequestOptions()
@@ -27,13 +27,14 @@ class PhotoGridViewModel {
     
         if fetchResult.count > 0 {
             for item in 0..<fetchResult.count {
-                imgManager.requestImage(for: fetchResult.object(at: item),
+                let asset = fetchResult.object(at: item)
+                imgManager.requestImage(for: asset,
                                         targetSize: CGSize(width: 210,
                                                            height: 210),
                                         contentMode: .aspectFit,
                                         options: requestOptions) { (image, error) in
                                             guard let image = image else { return }
-                                            imageArray.append(image)
+                                            imageArray.append(ImageModel(image: image, id: asset.localIdentifier))
                                             debugPrint(error ?? "")
                 }
             }

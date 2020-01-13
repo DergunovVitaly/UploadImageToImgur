@@ -10,7 +10,6 @@ import Foundation
 import Moya
 
 public enum Imgur {
-    
     static private let clientId = "ae60b8e7c7c23dc"
     case upload(UIImage)
 }
@@ -18,7 +17,8 @@ public enum Imgur {
 extension Imgur: TargetType {
     
     public var baseURL: URL {
-        return URL(string: "https://api.imgur.com/3")!
+        guard let url = URL(string: "https://api.imgur.com/3") else { fatalError("baseURL could not be configured") }
+        return url
     }
     
     public var path: String {
@@ -42,7 +42,7 @@ extension Imgur: TargetType {
     public var task: Task {
         switch self {
         case .upload(let image):
-            let imageData = image.jpegData(compressionQuality: 1.0)!
+            let imageData = image.jpegData(compressionQuality: 1.0) ?? Data()
             return .uploadMultipart([MultipartFormData(provider: .data(imageData),
                                                        name: "image",
                                                        fileName: "photoFromLibrary.jpg",
