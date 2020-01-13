@@ -8,15 +8,16 @@
 
 import Foundation
 import UIKit
+import Moya
 
 class PhotoGridViewController: UIViewController {
     
-    private let contentView = PhotoGridView()
-    private let viewModel = PhotoGridViewModel()
     private var imageArray: [UIImage] = []
     private var itemsPerRow: CGFloat = 3
+    private let viewModel = PhotoGridViewModel()
+    private let contentView = PhotoGridView()
     private let minimumItemSpacing: CGFloat = 5
-    let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+    private let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -33,16 +34,20 @@ class PhotoGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        grabPhotos()
+        contentView.collectionView.delegate = self
+        contentView.collectionView.dataSource = self
+    }
+    
+    private func grabPhotos() {
         viewModel.grabPhotos { [unowned self] result in
             switch result {
             case .success(let image):
                 self.imageArray = image
             case .failure:
-                self.showAlert(alertText: "Error", alertMessage: "Error", buttonTitle: "Ok")
+                self.presentErrorAlert()
             }
         }
-        contentView.collectionView.delegate = self
-        contentView.collectionView.dataSource = self
     }
     
     private func setupNavigationController() {
@@ -70,10 +75,31 @@ class PhotoGridViewController: UIViewController {
         super.viewWillLayoutSubviews()
         itemsPerRow = UIApplication.shared.statusBarOrientation.isLandscape ? 5 : 3
     }
+    
+    private func presentShare(image: UIImage, url: URL) {
+        let alert = UIAlertController(title: "Your card is ready!", message: nil, preferredStyle: .actionSheet)
+        
+        let openAction = UIAlertAction(title: "Open in Imgur", style: .default) { _ in
+            UIApplication.shared.open(url)
+        }
+        
+        let shareAction = UIAlertAction(title: "Share", style: .default) { [weak self] _ in
+            let share = UIActivityViewController(activityItems: ["Check out my iMarvel card!", url, image],
+                                                 applicationActivities: nil)
+            share.excludedActivityTypes = [.airDrop, .addToReadingList]
+            self?.present(share, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(openAction)
+        alert.addAction(shareAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
@@ -85,6 +111,17 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
             for: indexPath) as? PhotoGridCell else { return UICollectionViewCell() }
         cell.thumbnailImage = imageArray[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Request.uploadImage(image: imageArray[indexPath.row]) {[unowned self] (result) in
+            switch result {
+            case .success(let url):
+                self.presentShare(image: self.imageArray[indexPath.row], url: url)
+            case .failure(_):
+                print("Error")
+            }
+        }
     }
     
 }

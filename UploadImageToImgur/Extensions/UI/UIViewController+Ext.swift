@@ -29,7 +29,7 @@ extension UIViewController {
         dismiss(animated: animated)
     }
     
-     func showAlert(alertText: String, alertMessage: String, buttonTitle: String) {
+    func showAlert(alertText: String, alertMessage: String, buttonTitle: String) {
         let alert = UIAlertController(title: alertText,
                                       message: alertMessage,
                                       preferredStyle: UIAlertController.Style.alert)
@@ -48,6 +48,13 @@ extension UIViewController {
         DispatchQueue.main.async {
             MBProgressHUD.hideProgress(for: self)
         }
+    }
+    func presentErrorAlert() {
+        let alert = UIAlertController(title: Localizable.error(),
+                                      message: Localizable.wentWrong(),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Localizable.cancel(), style: .cancel))
+        present(alert, animated: true, completion: nil)
     }
 }
 

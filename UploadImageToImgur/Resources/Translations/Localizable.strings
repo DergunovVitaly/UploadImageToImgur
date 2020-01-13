@@ -14,3 +14,6 @@
 "photoLibrary" = "Photo Library";
 "link" = "link";
 "noPhoto" = "You got no photo";
+"error" = "Error";
+"wentWrong" = "Something went wrong. Try again later.";
+"cancel" = "Cancel";
