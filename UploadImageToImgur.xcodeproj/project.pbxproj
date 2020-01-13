@@ -480,7 +480,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift,
+				"$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

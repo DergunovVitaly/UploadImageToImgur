@@ -118,12 +118,11 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
             switch result {
             case .success(let url):
                 self.presentShare(image: self.imageArray[indexPath.row], url: url)
-            case .failure(_):
-                print("Error")
+            case .failure(let error):
+                print(error)
             }
         }
     }
-    
 }
 
 extension PhotoGridViewController: UICollectionViewDelegateFlowLayout {

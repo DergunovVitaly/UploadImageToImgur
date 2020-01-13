@@ -27,13 +27,10 @@ class Request {
                         completion(.success(upload.data.link))
                     } catch {
                         completion(.failure(error))
-//                        self.presentErrorAlert()
                     }
                 case .failure(let error):
                     completion(.failure(error))
-//                    self.presentErrorAlert()
                 }
-//                self.hideProgress()
         })
     }
 }
