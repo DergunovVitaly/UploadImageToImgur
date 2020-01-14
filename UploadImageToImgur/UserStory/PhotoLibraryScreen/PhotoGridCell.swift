@@ -13,7 +13,9 @@ import MBProgressHUD
 class PhotoGridCell: UICollectionViewCell {
 
     private let imageView = UIImageView()
-    
+    var activityView = UIActivityIndicatorView(style: .whiteLarge)
+      
+//       activityView.startAnimating()
     var thumbnailImage: UIImage! {
         didSet {
             imageView.image = thumbnailImage
@@ -35,13 +37,18 @@ class PhotoGridCell: UICollectionViewCell {
     }
     
     func loadingState(isLoading: Bool) {
-        isLoading ? MBProgressHUD.showProgress(on: self) : MBProgressHUD.hideProgress(for: self)        
+        isLoading ? activityView.startAnimating() : activityView.stopAnimating()
     }
     
     private func setupLayout() {
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+        }
+        
+        contentView.addSubview(activityView)
+        activityView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
         }
     }
 }

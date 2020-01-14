@@ -119,20 +119,14 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// Value: Alert
       static let alert = Rswift.StringResource(key: "alert", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancel
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Cancel
-      static let commonCancel = Rswift.StringResource(key: "common.cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Error
-      static let commonError = Rswift.StringResource(key: "common.error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Error
       static let error = Rswift.StringResource(key: "error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
-      /// Value: Ok
-      static let commonOk = Rswift.StringResource(key: "common.ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Photo Library
       static let photoLibrary = Rswift.StringResource(key: "photoLibrary", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Something went wrong. Try again later.
@@ -172,32 +166,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("cancel", bundle: bundle, comment: "")
       }
 
-      /// Value: Cancel
-      static func commonCancel(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("common.cancel", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "common.cancel"
-        }
-
-        return NSLocalizedString("common.cancel", bundle: bundle, comment: "")
-      }
-
-      /// Value: Error
-      static func commonError(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("common.error", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "common.error"
-        }
-
-        return NSLocalizedString("common.error", bundle: bundle, comment: "")
-      }
-
       /// Value: Error
       static func error(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -209,19 +177,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("error", bundle: bundle, comment: "")
-      }
-
-      /// Value: Ok
-      static func commonOk(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("common.ok", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "common.ok"
-        }
-
-        return NSLocalizedString("common.ok", bundle: bundle, comment: "")
       }
 
       /// Value: Photo Library

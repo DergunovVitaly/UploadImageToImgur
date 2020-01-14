@@ -12,10 +12,6 @@ import UIKit
 typealias Localizable = R.string.localizable
 typealias Images = R.image
 
-typealias VoidClosure = (() -> Void)
-typealias BoolClosure = ((Bool) -> Void)
-typealias ScrollViewClosure = ((UIScrollView) -> Void)
-
 struct ImgurResponse<T: Codable>: Codable {
   let data: T
 }

@@ -13,20 +13,6 @@ var AssociatedObjectHandle: UInt8 = 0
 
 extension MBProgressHUD {
     
-    static func showProgress(on viewController: UIViewController?) {
-        guard let VC = viewController else { return }
-        MBProgressHUD.showAdded(to: VC.view, animated: true)
-        increaseActivity(view: VC.view)
-    }
-    
-    static func hideProgress(for viewController: UIViewController?) {
-        guard let VC = viewController else { return }
-        decreaseActivity(view: VC.view)
-        if getCurrentActivity(view: VC.view) == 0 {
-            MBProgressHUD.hide(for: VC.view, animated: true)
-        }
-    }
-    
     static func showProgress(on view: UIView) {
         MBProgressHUD.showAdded(to: view, animated: true)
         increaseActivity(view: view)

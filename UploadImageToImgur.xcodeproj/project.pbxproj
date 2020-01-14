@@ -12,8 +12,6 @@
 		1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */; };
 		1F27FDFB23CC95ED00E26E0E /* UploadResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */; };
 		1F87596223C9E29600599943 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596123C9E29600599943 /* Constants.swift */; };
-		1F87596423C9E87100599943 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596323C9E87100599943 /* AppRouter.swift */; };
-		1F87596623C9E89E00599943 /* DebugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596523C9E89D00599943 /* DebugVC.swift */; };
 		1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */; };
 		1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596D23C9F70700599943 /* PhotoGridView.swift */; };
 		1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */; };
@@ -29,10 +27,8 @@
 		5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */; };
 		5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667823685E040080195C /* UIScreen+Ext.swift */; };
 		5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667923685E040080195C /* UIViewController+Ext.swift */; };
-		5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */; };
 		5B4D66A123685E050080195C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668423685E040080195C /* Assets.xcassets */; };
 		5B4D66A323685E050080195C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668723685E040080195C /* Localizable.strings */; };
-		5B4D66A423685E050080195C /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D668923685E050080195C /* VendorService.swift */; };
 		5B4D66A523685E050080195C /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668B23685E050080195C /* Configuration.plist */; };
 		5B4D66A823685E050080195C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D668F23685E050080195C /* AppDelegate.swift */; };
 		C90395261FC62399006F1DC0 /* TestsAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90395251FC62399006F1DC0 /* TestsAppDelegate.swift */; };
@@ -56,8 +52,6 @@
 		1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadService.swift; sourceTree = "<group>"; };
 		1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadResults.swift; path = UploadImageToImgur/Services/Networking/UploadResults.swift; sourceTree = SOURCE_ROOT; };
 		1F87596123C9E29600599943 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1F87596323C9E87100599943 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		1F87596523C9E89D00599943 /* DebugVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugVC.swift; sourceTree = "<group>"; };
 		1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		1F87596D23C9F70700599943 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
 		1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
@@ -79,10 +73,8 @@
 		5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667823685E040080195C /* UIScreen+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667923685E040080195C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
-		5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
 		5B4D668423685E040080195C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4D668723685E040080195C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		5B4D668923685E050080195C /* VendorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorService.swift; sourceTree = "<group>"; };
 		5B4D668B23685E050080195C /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		5B4D668C23685E050080195C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4D668F23685E050080195C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,14 +145,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		1F87596723C9EA2300599943 /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-				1F87596523C9E89D00599943 /* DebugVC.swift */,
-			);
-			path = Debug;
-			sourceTree = "<group>";
-		};
 		1F87596A23C9F69E00599943 /* PhotoLibraryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,8 +190,8 @@
 		2A1E77351F384BFC006C84D4 /* UploadImageToImgur */ = {
 			isa = PBXGroup;
 			children = (
-				5B4D669023685E050080195C /* UserStory */,
 				5B4D667423685E040080195C /* Extensions */,
+				5B4D669023685E050080195C /* UserStory */,
 				5B4D667E23685E040080195C /* Resources */,
 				5B281BE42368614D00D74E1D /* Models */,
 				5B4D668823685E050080195C /* Services */,
@@ -250,7 +234,6 @@
 				5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */,
 				5B4D667823685E040080195C /* UIScreen+Ext.swift */,
 				5B4D667923685E040080195C /* UIViewController+Ext.swift */,
-				5B4D667A23685E040080195C /* UINavigationBar+Ext.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -294,8 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				1F27FDF123CB749000E26E0E /* Networking */,
-				1F87596323C9E87100599943 /* AppRouter.swift */,
-				5B4D668923685E050080195C /* VendorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -314,17 +295,8 @@
 			children = (
 				1F959F8923CDE77200E36337 /* LinksScreen */,
 				1F87596A23C9F69E00599943 /* PhotoLibraryScreen */,
-				5B4D669123685E050080195C /* Entrance */,
 			);
 			path = UserStory;
-			sourceTree = "<group>";
-		};
-		5B4D669123685E050080195C /* Entrance */ = {
-			isa = PBXGroup;
-			children = (
-				1F87596723C9EA2300599943 /* Debug */,
-			);
-			path = Entrance;
 			sourceTree = "<group>";
 		};
 		5B7E306F2368749E00166008 /* BundleFiles */ = {
@@ -473,7 +445,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift,
+				"$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -487,8 +459,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UploadImageToImgur/Pods-UploadImageToImgur-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Closures/Closures.framework",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -502,8 +472,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Closures.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -570,17 +538,13 @@
 				1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */,
 				1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
-				1F87596423C9E87100599943 /* AppRouter.swift in Sources */,
 				1F959F8823CDD91000E36337 /* DBModel.swift in Sources */,
 				5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */,
 				1F87596223C9E29600599943 /* Constants.swift in Sources */,
 				1F959F8623CCE8AB00E36337 /* ImageModel.swift in Sources */,
-				5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */,
 				1F959F8D23CDE7EF00E36337 /* LinksListView.swift in Sources */,
 				1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */,
-				1F87596623C9E89E00599943 /* DebugVC.swift in Sources */,
 				1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */,
-				5B4D66A423685E050080195C /* VendorService.swift in Sources */,
 				1F27FDF723CB7AD100E26E0E /* NetworkService.swift in Sources */,
 				1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */,
 				1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */,
