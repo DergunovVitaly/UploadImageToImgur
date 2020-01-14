@@ -1,12 +1,16 @@
-# UploadImageToImgur
+## ** Uploadimagetoimgur**
 
-Coding Exercise
+##### Coding Exercise
 
-Create the following iOS app on Xcode framework, using Swift:
-Capabilities:
+** Ios App Using Swift:**
 
-● The app should support iPhone and iPad devices.
-● The app should support portrait and landscape modes.
+------------
+
+
+#### Capabilities:
+
+● The app support iPhone and iPad devices.
+● The app  support portrait and landscape modes.
 ● Target OS version - iOS 10 and above
 
 Flow:
