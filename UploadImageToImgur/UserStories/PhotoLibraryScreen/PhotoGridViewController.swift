@@ -8,17 +8,16 @@
 
 import Foundation
 import UIKit
-import RealmSwift
+import Photos
 
 class PhotoGridViewController: UIViewController {
     
     private var imageModelArray: [ImageModel] = []
+    private var imageIdSet = Set<String>()
     private let minimumItemSpacing: CGFloat = 5
     private let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     private let viewModel = PhotoGridViewModel()
     private let contentView = PhotoGridView()
-    
-    private var imageIdSet = Set<String>()
     
     private var itemsPerRow: CGFloat {
         return UIApplication.shared.statusBarOrientation.isLandscape ? 5.0 : 3.0
@@ -39,9 +38,20 @@ class PhotoGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        grabPhotos()
+        checkAuthorized()
         contentView.collectionView.delegate = self
         contentView.collectionView.dataSource = self
+    }
+    
+    private func checkAuthorized() {
+        PHPhotoLibrary.requestAuthorization { [unowned self] (status) in
+            if (status) == (PHAuthorizationStatus.authorized) {
+                self.grabPhotos()
+                DispatchQueue.main.async {
+                    self.contentView.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     private func grabPhotos() {
@@ -77,24 +87,8 @@ class PhotoGridViewController: UIViewController {
     }
     
     private func checkContainsId(id: String) -> Bool {
-            return imageIdSet.contains(id)
+        return imageIdSet.contains(id)
     }
-    
-    func addURLstoDB(url: String) {
-        DispatchQueue.global().async {
-            guard let realm = try? Realm() else {
-                self.presentErrorAlert()
-                return
-            }
-            
-            let newItem = UrlDBModel()
-            newItem.urlString = url
-            try? realm.write {
-                realm.add(newItem)
-            }
-        }
-    }
-    
 }
 
 extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -114,21 +108,21 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let imageId = self.imageModelArray[indexPath.row].id
-         if self.checkContainsId(id: imageId) {
+        let imageId = imageModelArray[indexPath.row].id
+        if checkContainsId(id: imageId) {
             return
         }
-        self.imageIdSet.insert(imageId)
-        contentView.collectionView.reloadItems(at: [indexPath])
-            ImageUploadService.uploadImageModel(image: imageModelArray[indexPath.row]) { [unowned self] (result) in
-                self.imageIdSet.remove(imageId)
-                switch result {
-                case .success(let url):
-                    self.addURLstoDB(url: url.absoluteString)
-                case .failure:
-                    self.presentErrorAlert()
-                }
-                self.contentView.collectionView.reloadItems(at: [indexPath])
+        imageIdSet.insert(imageId)
+        collectionView.reloadItems(at: [indexPath])
+        ImageUploadService.uploadImageModel(image: imageModelArray[indexPath.row]) { [unowned self] (result) in
+            self.imageIdSet.remove(imageId)
+            switch result {
+            case .success(let url):
+                DataBaseService.addURLsToDataBase(url: url.absoluteString)
+            case .failure:
+                self.presentErrorAlert()
+            }
+            collectionView.reloadItems(at: [indexPath])
         } 
     }
 }

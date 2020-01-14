@@ -4,6 +4,7 @@ disabled_rules:
   - trailing_whitespace
   - conditional_returns_on_newline
   - sorted_imports
+  - closure_end_indentation
   - unneeded_parentheses_in_closure_argument
   - empty_count
   - attributes
@@ -29,6 +30,7 @@ opt_in_rules:
   - switch_case_on_newline
   - trailing_closure
   - unneeded_parentheses_in_closure_argument
+
 excluded:
   - Carthage
   - Pods

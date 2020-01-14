@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 import Reachability
 
+protocol NetworkReachabilityManagerDelegate: class {
+    func reachabilityChanged(connection: Reachability.Connection)
+}
+
 class NetworkReachabilityManager {
+    
+    weak var delegate: NetworkReachabilityManagerDelegate?
     
     let reachability: Reachability?
     static var shared = NetworkReachabilityManager()
@@ -57,5 +63,6 @@ class NetworkReachabilityManager {
         case .none, .unavailable:
             debugPrint("Network not reachable")
         }
+        delegate?.reachabilityChanged(connection: reachability.connection)
     }
 }

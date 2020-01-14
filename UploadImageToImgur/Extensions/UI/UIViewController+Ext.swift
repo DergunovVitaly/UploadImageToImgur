@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 extension UIViewController {
     func presentErrorAlert() {

@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import MBProgressHUD
 
 class PhotoGridCell: UICollectionViewCell {
 

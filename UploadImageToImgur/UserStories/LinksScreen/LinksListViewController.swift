@@ -21,12 +21,12 @@ class LinksListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readDB()
+        fillURLsDB()
         contentView.tableView.delegate = self
         contentView.tableView.dataSource = self
     }
     
-    private func readDB() {
+    private func fillURLsDB() {
         guard let realm = try? Realm() else { return }
         urlsArray = realm.objects(UrlDBModel.self).sorted(byKeyPath: "createdAt", ascending: false)
     }

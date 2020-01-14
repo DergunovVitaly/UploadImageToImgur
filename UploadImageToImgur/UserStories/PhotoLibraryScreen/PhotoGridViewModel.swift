@@ -25,7 +25,7 @@ class PhotoGridViewModel {
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-     
+        
         if fetchResult.count > 0 {
             for item in 0..<fetchResult.count {
                 let asset = fetchResult.object(at: item)
@@ -41,7 +41,6 @@ class PhotoGridViewModel {
             }
             completion(.success(imageArray))
         } else {
-            //TODO: Show photos when allow to use photoLibrary
             debugPrint(Localizable.noPhoto())
         }
     }

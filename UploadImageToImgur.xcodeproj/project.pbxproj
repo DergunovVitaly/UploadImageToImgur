@@ -11,6 +11,7 @@
 		1F27FDF723CB7AD100E26E0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF623CB7AD100E26E0E /* NetworkService.swift */; };
 		1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */; };
 		1F27FDFB23CC95ED00E26E0E /* UploadResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */; };
+		1F342DEC23CE6527002628D1 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F342DEB23CE6527002628D1 /* DataBaseService.swift */; };
 		1F87596223C9E29600599943 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596123C9E29600599943 /* Constants.swift */; };
 		1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */; };
 		1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87596D23C9F70700599943 /* PhotoGridView.swift */; };
@@ -50,6 +51,7 @@
 		1F27FDF623CB7AD100E26E0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1F27FDF823CC93D000E26E0E /* ImageUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadService.swift; sourceTree = "<group>"; };
 		1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UploadResults.swift; path = UploadImageToImgur/Services/Networking/UploadResults.swift; sourceTree = SOURCE_ROOT; };
+		1F342DEB23CE6527002628D1 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		1F87596123C9E29600599943 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		1F87596D23C9F70700599943 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		1F342DE923CE64DF002628D1 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				1F342DEB23CE6527002628D1 /* DataBaseService.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		1F87596023C9E28600599943 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4D667423685E040080195C /* Extensions */,
-				5B4D669023685E050080195C /* UserStory */,
+				5B4D669023685E050080195C /* UserStories */,
 				5B4D667E23685E040080195C /* Resources */,
 				5B281BE42368614D00D74E1D /* Models */,
 				5B4D668823685E050080195C /* Services */,
@@ -273,6 +283,7 @@
 		5B4D668823685E050080195C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1F342DE923CE64DF002628D1 /* DataBase */,
 				1F27FDF123CB749000E26E0E /* Networking */,
 			);
 			path = Services;
@@ -287,13 +298,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		5B4D669023685E050080195C /* UserStory */ = {
+		5B4D669023685E050080195C /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
 				1F959F8923CDE77200E36337 /* LinksScreen */,
 				1F87596A23C9F69E00599943 /* PhotoLibraryScreen */,
 			);
-			path = UserStory;
+			path = UserStories;
 			sourceTree = "<group>";
 		};
 		5B7E306F2368749E00166008 /* BundleFiles */ = {
@@ -456,7 +467,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UploadImageToImgur/Pods-UploadImageToImgur-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
@@ -469,7 +479,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
@@ -545,6 +554,7 @@
 				1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */,
 				1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */,
 				1F959F8B23CDE7C300E36337 /* LinksListViewController.swift in Sources */,
+				1F342DEC23CE6527002628D1 /* DataBaseService.swift in Sources */,
 				5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
