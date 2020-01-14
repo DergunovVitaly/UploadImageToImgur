@@ -10,7 +10,10 @@ import Foundation
 import RealmSwift
 
 class DataBaseService {
-    static func addURLsToDataBase(url: String) {
+    
+    private var urlsArray: Results<UrlDBModel>!
+    
+    func writeToDataBase(url: String) {
         DispatchQueue.global().async {
             guard let realm = try? Realm() else { return }
             let newItem = UrlDBModel()
@@ -19,5 +22,11 @@ class DataBaseService {
                 realm.add(newItem)
             }
         }
+    }
+    
+    func readFromDataBase() -> [String] {
+        guard let realm = try? Realm() else { return [""] }
+        urlsArray = realm.objects(UrlDBModel.self).sorted(byKeyPath: "createdAt", ascending: false)
+        return urlsArray.map { $0.urlString }
     }
 }
