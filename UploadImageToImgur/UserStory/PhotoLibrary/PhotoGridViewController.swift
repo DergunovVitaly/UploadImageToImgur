@@ -18,10 +18,9 @@ class PhotoGridViewController: UIViewController {
     private let viewModel = PhotoGridViewModel()
     private let contentView = PhotoGridView()
     
-    var imageIdSet = Set<String>()
+    private var imageIdSet = Set<String>()
+    private var isLoading = false
     
-    var isLoading = false
-  
     private var itemsPerRow: CGFloat {
         return UIApplication.shared.statusBarOrientation.isLandscape ? 5.0 : 3.0
     }
@@ -81,27 +80,6 @@ class PhotoGridViewController: UIViewController {
         debugPrint("taping link button")
     }
     
-    private func presentShare(image: UIImage, url: URL) {
-        let alert = UIAlertController(title: "Your card is ready!", message: nil, preferredStyle: .actionSheet)
-        
-        let openAction = UIAlertAction(title: "Open in Imgur", style: .default) { _ in
-            UIApplication.shared.open(url)
-        }
-        
-        let shareAction = UIAlertAction(title: "Share", style: .default) { [weak self] _ in
-            let share = UIActivityViewController(activityItems: ["Check out my iMarvel card!", url, image],
-                                                 applicationActivities: nil)
-            share.excludedActivityTypes = [.airDrop, .addToReadingList]
-            self?.present(share, animated: true, completion: nil)
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(openAction)
-        alert.addAction(shareAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
     private func checkContainsId(id: String) -> Bool {
         if imageIdSet.contains(id) {
             return true
@@ -112,7 +90,7 @@ class PhotoGridViewController: UIViewController {
 }
 
 extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-  
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageModelArray.count
     }
@@ -131,19 +109,20 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
         isLoading = self.checkContainsId(id: self.imageModelArray[indexPath.row].id)
         contentView.collectionView.reloadItems(at: [indexPath])
         if self.checkContainsId(id: self.imageModelArray[indexPath.row].id) {
-        ImageUploadService.uploadImageModel(image: imageModelArray[indexPath.row]) { [unowned self] (result) in
-            switch result {
-            case .success(let url):
-                self.imageIdSet.remove(self.imageModelArray[indexPath.row].id)
-                self.isLoading = self.checkContainsId(id: self.imageModelArray[indexPath.row].id)
-                self.contentView.collectionView.reloadItems(at: [indexPath])
-//                self.presentShare(image: self.imageModelArray[indexPath.row].image, url: url)
-            case .failure:
-                self.presentErrorAlert()
+            ImageUploadService.uploadImageModel(image: imageModelArray[indexPath.row]) { [unowned self] (result) in
+                switch result {
+                case .success(let url):
+                    self.imageIdSet.remove(self.imageModelArray[indexPath.row].id)
+                    self.isLoading = self.checkContainsId(id: self.imageModelArray[indexPath.row].id)
+                    self.contentView.collectionView.reloadItems(at: [indexPath])
+                case .failure:
+                    self.presentErrorAlert()
+                }
             }
-        }
         } else {
-            self.presentAlert(alertText: "Alert", alertMessage: "This image has been uploaded.", buttonTitle: "Ok")
+            self.presentAlert(alertText: Localizable.alert(),
+                              alertMessage: Localizable.uploaded(),
+                              buttonTitle: Localizable.ok())
         }
     }
 }

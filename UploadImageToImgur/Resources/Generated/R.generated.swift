@@ -119,8 +119,10 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 10 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
     struct localizable {
+      /// Value: Alert
+      static let alert = Rswift.StringResource(key: "alert", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancel
       static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Cancel
@@ -135,12 +137,27 @@ struct R: Rswift.Validatable {
       static let photoLibrary = Rswift.StringResource(key: "photoLibrary", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Something went wrong. Try again later.
       static let wentWrong = Rswift.StringResource(key: "wentWrong", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: This image has been uploaded.
+      static let uploaded = Rswift.StringResource(key: "uploaded", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: You got no photo
       static let noPhoto = Rswift.StringResource(key: "noPhoto", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: link
       static let link = Rswift.StringResource(key: "link", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Alert
+      static func alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert"
+        }
+
+        return NSLocalizedString("alert", bundle: bundle, comment: "")
+      }
 
       /// Value: Cancel
       static func cancel(preferredLanguages: [String]? = nil) -> String {
@@ -231,6 +248,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("wentWrong", bundle: bundle, comment: "")
+      }
+
+      /// Value: This image has been uploaded.
+      static func uploaded(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uploaded", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "uploaded"
+        }
+
+        return NSLocalizedString("uploaded", bundle: bundle, comment: "")
       }
 
       /// Value: You got no photo

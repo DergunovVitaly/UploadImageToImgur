@@ -17,3 +17,5 @@
 "error" = "Error";
 "wentWrong" = "Something went wrong. Try again later.";
 "cancel" = "Cancel";
+"uploaded" = "This image has been uploaded.";
+"alert" = "Alert";
