@@ -18,6 +18,7 @@ class PhotoGridViewController: UIViewController {
     private let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     private let viewModel = PhotoGridViewModel()
     private let contentView = PhotoGridView()
+    private let dataBaseService = DataBaseService()
     
     private var itemsPerRow: CGFloat {
         return UIApplication.shared.statusBarOrientation.isLandscape ? 5.0 : 3.0
@@ -118,7 +119,7 @@ extension PhotoGridViewController: UICollectionViewDelegate, UICollectionViewDat
             self.imageIdSet.remove(imageId)
             switch result {
             case .success(let url):
-                DataBaseService.addURLsToDataBase(url: url.absoluteString)
+                self.dataBaseService.writeToDataBase(url: url.absoluteString)
             case .failure:
                 self.presentErrorAlert()
             }
