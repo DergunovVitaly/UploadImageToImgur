@@ -24,7 +24,6 @@
 		1F959F8F23CDEB8800E36337 /* LinksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8E23CDEB8800E36337 /* LinksListCell.swift */; };
 		3FE9F671A4A651EDEABFA9CF /* Pods_UploadImageToImgurTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371985A5ED02858412F24C4 /* Pods_UploadImageToImgurTests.framework */; };
 		4D3F387D21391749DEAB5897 /* Pods_UploadImageToImgur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9939A6FC4E23DC63FD4B98A /* Pods_UploadImageToImgur.framework */; };
-		5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */; };
 		5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667823685E040080195C /* UIScreen+Ext.swift */; };
 		5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667923685E040080195C /* UIViewController+Ext.swift */; };
 		5B4D66A123685E050080195C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D668423685E040080195C /* Assets.xcassets */; };
@@ -70,7 +69,6 @@
 		42B2ED24F7FA3C9895C863AB /* Pods-UploadImageToImgur.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgur.adhoc.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgur/Pods-UploadImageToImgur.adhoc.xcconfig"; sourceTree = "<group>"; };
 		4DAC36C6812A36F8172D4F91 /* Pods-UploadImageToImgur.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgur.release.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgur/Pods-UploadImageToImgur.release.xcconfig"; sourceTree = "<group>"; };
 		55F50BE321404BDD00FAC039 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
-		5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667823685E040080195C /* UIScreen+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		5B4D667923685E040080195C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		5B4D668423685E040080195C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 		5B4D667523685E040080195C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */,
 				5B4D667823685E040080195C /* UIScreen+Ext.swift */,
 				5B4D667923685E040080195C /* UIViewController+Ext.swift */,
 			);
@@ -445,7 +442,7 @@
 			);
 			name = R.swift;
 			outputPaths = (
-				"$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift",
+				$SRCROOT/UploadImageToImgur/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,7 +531,6 @@
 				1F27FDF323CB74D400E26E0E /* NetworkManager.swift in Sources */,
 				5B4D66A823685E050080195C /* AppDelegate.swift in Sources */,
 				1F959F8F23CDEB8800E36337 /* LinksListCell.swift in Sources */,
-				5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */,
 				1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */,
 				1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,

@@ -13,9 +13,8 @@ import MBProgressHUD
 class PhotoGridCell: UICollectionViewCell {
 
     private let imageView = UIImageView()
-    var activityView = UIActivityIndicatorView(style: .whiteLarge)
-      
-//       activityView.startAnimating()
+    private let activityView = UIActivityIndicatorView(style: .whiteLarge)
+    
     var thumbnailImage: UIImage! {
         didSet {
             imageView.image = thumbnailImage
@@ -47,7 +46,11 @@ class PhotoGridCell: UICollectionViewCell {
         }
         
         contentView.addSubview(activityView)
+        activityView.layer.cornerRadius = 10
+        activityView.color = .blue
+        activityView.backgroundColor = .white
         activityView.snp.makeConstraints { (make) in
+            make.size.equalTo(55)
             make.center.equalToSuperview()
         }
     }

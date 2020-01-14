@@ -8,7 +8,6 @@ target 'UploadImageToImgur' do
   
   pod 'SnapKit'
   pod 'R.swift'
-  pod 'MBProgressHUD'
   pod 'Moya/RxSwift'
   pod 'SwiftLint'
   pod 'ReachabilitySwift'
