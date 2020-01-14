@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VendorService.start(options: launchOptions)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        AppRouter.newState(.debug)
+        window?.rootViewController = UINavigationController(rootViewController: PhotoGridViewController())
+        NetworkReachabilityManager.shared.beginReachability()
         return true
     }
 }

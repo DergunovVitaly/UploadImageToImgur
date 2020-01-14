@@ -14,6 +14,7 @@ target 'UploadImageToImgur' do
   pod 'SwiftLint'
   pod 'Eureka'
   pod 'ReachabilitySwift'
+  pod 'RealmSwift'
   
   target 'UploadImageToImgurTests' do
     inherit! :search_paths

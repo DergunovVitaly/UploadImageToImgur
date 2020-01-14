@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct UploadResult: Codable {
   let link: URL

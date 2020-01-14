@@ -20,6 +20,10 @@
 		1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759A923C9FD0900599943 /* R.generated.swift */; };
 		1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */; };
 		1F959F8623CCE8AB00E36337 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8523CCE8AB00E36337 /* ImageModel.swift */; };
+		1F959F8823CDD91000E36337 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8723CDD91000E36337 /* DBModel.swift */; };
+		1F959F8B23CDE7C300E36337 /* LinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8A23CDE7C300E36337 /* LinksListViewController.swift */; };
+		1F959F8D23CDE7EF00E36337 /* LinksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8C23CDE7EF00E36337 /* LinksListView.swift */; };
+		1F959F8F23CDEB8800E36337 /* LinksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F959F8E23CDEB8800E36337 /* LinksListCell.swift */; };
 		3FE9F671A4A651EDEABFA9CF /* Pods_UploadImageToImgurTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6371985A5ED02858412F24C4 /* Pods_UploadImageToImgurTests.framework */; };
 		4D3F387D21391749DEAB5897 /* Pods_UploadImageToImgur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9939A6FC4E23DC63FD4B98A /* Pods_UploadImageToImgur.framework */; };
 		5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D667723685E040080195C /* MBProgressHUD+Ext.swift */; };
@@ -60,6 +64,10 @@
 		1F8759A923C9FD0900599943 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
 		1F959F8523CCE8AB00E36337 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageModel.swift; path = UploadImageToImgur/Services/Networking/ImageModel.swift; sourceTree = SOURCE_ROOT; };
+		1F959F8723CDD91000E36337 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DBModel.swift; path = UploadImageToImgur/Services/Networking/DBModel.swift; sourceTree = SOURCE_ROOT; };
+		1F959F8A23CDE7C300E36337 /* LinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListViewController.swift; sourceTree = "<group>"; };
+		1F959F8C23CDE7EF00E36337 /* LinksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListView.swift; sourceTree = "<group>"; };
+		1F959F8E23CDEB8800E36337 /* LinksListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListCell.swift; sourceTree = "<group>"; };
 		242B2B3C418D963250C65FC0 /* Pods-UploadImageToImgurTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UploadImageToImgurTests.release.xcconfig"; path = "Target Support Files/Pods-UploadImageToImgurTests/Pods-UploadImageToImgurTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A1E77331F384BFC006C84D4 /* UploadImageToImgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UploadImageToImgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1E77471F384BFD006C84D4 /* UploadImageToImgurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadImageToImgurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +161,7 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
-		1F87596A23C9F69E00599943 /* PhotoLibrary */ = {
+		1F87596A23C9F69E00599943 /* PhotoLibraryScreen */ = {
 			isa = PBXGroup;
 			children = (
 				1F87596B23C9F6EE00599943 /* PhotoGridViewController.swift */,
@@ -161,7 +169,17 @@
 				1F87596F23C9F71B00599943 /* PhotoGridViewModel.swift */,
 				1F8759AD23CA0E9800599943 /* PhotoGridCell.swift */,
 			);
-			path = PhotoLibrary;
+			path = PhotoLibraryScreen;
+			sourceTree = "<group>";
+		};
+		1F959F8923CDE77200E36337 /* LinksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1F959F8A23CDE7C300E36337 /* LinksListViewController.swift */,
+				1F959F8C23CDE7EF00E36337 /* LinksListView.swift */,
+				1F959F8E23CDEB8800E36337 /* LinksListCell.swift */,
+			);
+			path = LinksScreen;
 			sourceTree = "<group>";
 		};
 		2A1E772A1F384BFC006C84D4 = {
@@ -212,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				1F27FDFA23CC95ED00E26E0E /* UploadResults.swift */,
+				1F959F8723CDD91000E36337 /* DBModel.swift */,
 				1F959F8523CCE8AB00E36337 /* ImageModel.swift */,
 			);
 			path = Models;
@@ -293,7 +312,8 @@
 		5B4D669023685E050080195C /* UserStory */ = {
 			isa = PBXGroup;
 			children = (
-				1F87596A23C9F69E00599943 /* PhotoLibrary */,
+				1F959F8923CDE77200E36337 /* LinksScreen */,
+				1F87596A23C9F69E00599943 /* PhotoLibraryScreen */,
 				5B4D669123685E050080195C /* Entrance */,
 			);
 			path = UserStory;
@@ -473,6 +493,8 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -486,6 +508,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -541,15 +565,18 @@
 				1F27FDFB23CC95ED00E26E0E /* UploadResults.swift in Sources */,
 				1F27FDF323CB74D400E26E0E /* NetworkManager.swift in Sources */,
 				5B4D66A823685E050080195C /* AppDelegate.swift in Sources */,
+				1F959F8F23CDEB8800E36337 /* LinksListCell.swift in Sources */,
 				5B4D669823685E050080195C /* MBProgressHUD+Ext.swift in Sources */,
 				1F87596C23C9F6EE00599943 /* PhotoGridViewController.swift in Sources */,
 				1F87596E23C9F70700599943 /* PhotoGridView.swift in Sources */,
 				C90395271FC62425006F1DC0 /* TestsAppDelegate.swift in Sources */,
 				1F87596423C9E87100599943 /* AppRouter.swift in Sources */,
+				1F959F8823CDD91000E36337 /* DBModel.swift in Sources */,
 				5B4D669A23685E050080195C /* UIViewController+Ext.swift in Sources */,
 				1F87596223C9E29600599943 /* Constants.swift in Sources */,
 				1F959F8623CCE8AB00E36337 /* ImageModel.swift in Sources */,
 				5B4D669B23685E050080195C /* UINavigationBar+Ext.swift in Sources */,
+				1F959F8D23CDE7EF00E36337 /* LinksListView.swift in Sources */,
 				1F8759AA23C9FD0900599943 /* R.generated.swift in Sources */,
 				1F87596623C9E89E00599943 /* DebugVC.swift in Sources */,
 				1F8759AE23CA0E9800599943 /* PhotoGridCell.swift in Sources */,
@@ -557,6 +584,7 @@
 				1F27FDF723CB7AD100E26E0E /* NetworkService.swift in Sources */,
 				1F27FDF923CC93D000E26E0E /* ImageUploadService.swift in Sources */,
 				1F87597023C9F71B00599943 /* PhotoGridViewModel.swift in Sources */,
+				1F959F8B23CDE7C300E36337 /* LinksListViewController.swift in Sources */,
 				5B4D669923685E050080195C /* UIScreen+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
