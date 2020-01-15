@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  UploadImageToImgur
+
+  Copyright © VitaliiDerhunov. All rights reserved.
+*/
+
+"ok" = "ok";
+"photoLibrary" = "Photo Library";
+"link" = "link";
+"noPhoto" = "You got no photo";
+"error" = "Error";
+"wentWrong" = "Something went wrong. Try again later.";
+"cancel" = "Cancel";
+"uploaded" = "This image has been uploaded.";
+"alert" = "Alert";
+"warning" = "Warning";
+"connectToTheInternet" = "Please, connect to the Internet";
